@@ -4,6 +4,12 @@ install:
 build:
 	uv build
 
+package-install:
+	uv tool install dist/*.whl
+
+reinstall:
+	uv tool install --force dist/*.whl
+	
 uninstall:
 	uv tool uninstall report-from-csv
 

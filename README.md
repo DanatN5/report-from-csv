@@ -1,7 +1,7 @@
 [![Python CI](https://github.com/DanatN5/report-from-csv/actions/workflows/build.yml/badge.svg)](https://github.com/DanatN5/report-from-csv/actions/workflows/build.yml)
 
 # Демонстрация работы программы:
-    https://asciinema.org/a/VBD1lP52dUB5AyTS\
+    [Смотреть на asciinema.org](https://asciinema.org/a/e6fZ1Udis6AOJoii)
 
 # Установка:
 
