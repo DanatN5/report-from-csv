@@ -1,14 +1,14 @@
 import argparse
 from pathlib import Path
+
 from tabulate import tabulate
 
-from report_from_csv.scripts.parse_files import parse_files
 from report_from_csv.reports.average_gdp import average_gdp_report
-
 
 REPORTS = {
     "average-gdp": average_gdp_report
 }
+
 
 def csv_file(path: str) -> str:
     p = Path(path)
@@ -31,7 +31,8 @@ def main() -> None:
                         type=csv_file,
                         nargs='+',
                         required=True,
-                        help='принимает один или несколько путей к CSV-файлам для отчета',
+                        help='принимает один или несколько '
+                        'путей к CSV-файлам для отчета',
                         )
     parser.add_argument('--report',
                         required=True,
@@ -39,10 +40,13 @@ def main() -> None:
     
     args = parser. parse_args()
 
-    result = REPORTS[args.report](parse_files(args.files))
+    result = REPORTS[args.report](args.files)
 
-    print(tabulate(result, headers='keys', showindex=True, tablefmt="grid", floatfmt=".2f"))
-
+    print(tabulate(result, 
+                   headers='keys', 
+                   showindex=True, 
+                   tablefmt="grid", 
+                   floatfmt=".2f"))
 
 
 if __name__ == "__main__":
